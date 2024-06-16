@@ -3,47 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency - Converter</title>
+    <title>Currency Converter</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#container" class="navbar-logo">CurrencyConverter</a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="#container" class="navbar-links">Home</a></li>
+                <li class="navbar-item"><a href="#container-about" class="navbar-links">About Us</a></li>
+                <li class="navbar-item"><a href="#contact-section" class="navbar-links">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="container">
         <h2>Currency <span>Converter</span></h2>
         <form action="">
             <input type="text" name="amount" value="1" placeholder="Enter amount ">
-         <div class="dropdown">
-            <div class="from">
-                <p>From</p>
-                <div class="selection">
-                    <img src="https://flagsapi.com/US/flat/64.png" alt="flag">
-                    <select name="from">
-                  
-                    </select>
+            <div class="dropdown">
+                <div class="from">
+                    <p>From</p>
+                    <div class="selection">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="flag">
+                        <select name="from" style="background-color: transparent;">
+                            
+                        </select>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <div class="to">
+                    <p>To</p>
+                    <div class="selection">
+                        <img src="https://flagsapi.com/IN/flat/64.png" alt="flag">
+                        <select name="to" class="select-from" style="background-color: transparent;">
+                            
+                        </select>
+                    </div>
                 </div>
             </div>
-            <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            <div class="to">
-                <p>To</p>
-                <div class="selection">
-                    <img src="https://flagsapi.com/IN/flat/64.png" alt="flag">
-                    <select name="to" class="select-from">
-               
-                    </select>
-                </div>
-            </div>
-        </div>
-        <button class="btn">Exchange</button>
-        <p class="msg">1 USD = 83.37 INR</p>
-    </form>
+            <button class="btn">Exchange</button>
+            <p class="msg">1 USD = 83.37 INR</p>
+        </form>
     </div>
 
+    <div class="container-about" id ="container-about">
+        <h1>About Us</h1>
+        <p>A currency converter is indispensable for navigating foreign exchange, whether for travel, online shopping, or forex trading. Utilizing real-time exchange rates, this tool facilitates accurate conversions between different currencies, empowering users to make informed financial decisions. Available as online platforms and mobile apps, currency converters ensure accessibility and convenience globally, supporting a wide array of currencies. Many also offer features like historical exchange rate data for trend analysis and predictive insights. Advanced versions integrate with financial platforms, streamlining transactions and portfolio management. In essence, currency converters serve as crucial aids in international finance, offering clarity and precision amid the complexities of the global market.</p>
+
+            <h1>How to Exchange Currency?</h1>
+        <p>Exchanging currency online is a straightforward process ensuring smooth and secure transactions. Start by choosing a reputable currency exchange platform with competitive rates and reliable service. After registering and verifying your account, typically with identification documents, select the currencies for exchange. Verify the current exchange rate to ensure it meets your needs. Once confirmed, finalize the transaction details and proceed with the exchange. Funds are usually deposited directly into your designated bank account or digital wallet, making online currency exchange a convenient method for managing international transactions efficiently.</p>
+    </div>
+
+    <section class="contact-section" id="contact-section">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <form action="#">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 CurrencyConverter. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="Codes.js"></script>
     <script src="currency.js"></script>
-   
 </body>
 </html>

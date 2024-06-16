@@ -2,7 +2,6 @@
 const dropdowns = document.querySelectorAll(".dropdown select");
 const BASE_URL = "https://v6.exchangerate-api.com/v6/"; 
 const API_KEY = "3075bb9e294e1e1d3f7b9ccd";
-
 const msg = document.querySelector(".msg");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
@@ -56,6 +55,10 @@ button.addEventListener("click", async (evt) => {
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
 });
 
+const mobileMenu = document.querySelector('#mobile-menu');
+const navMenu = document.querySelector('.navbar-menu');
 
-
-
+mobileMenu.addEventListener('click', function() {
+    mobileMenu.classList.toggle('is-active');
+    navMenu.classList.toggle('active');
+});
