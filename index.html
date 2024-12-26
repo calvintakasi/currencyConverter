@@ -3,93 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debbie Xchange</title>
+    <title>Currency Pro</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" type="x-icon" href="Green-Dollar-Sign-PNG-Image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#container" class="navbar-logo">CurrencyConverter</a>
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <div class="nav-content">
+            <div class="logo">Currency Pro</div>
+            <div class="menu-icon">
+                <i class="fas fa-ellipsis-v"></i>
             </div>
-            <ul class="navbar-menu">
-                <li class="navbar-item"><a href="#container" class="navbar-links">Home</a></li>
-                <li class="navbar-item"><a href="#container-about" class="navbar-links">About Us</a></li>
-                <li class="navbar-item"><a href="#contact-section" class="navbar-links">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="#converter">Converter</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-to">How to Use</a></li>
+                <li><a href="#calculator">Calculator</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container" id="container">
-        <h2>Currency <span>Converter</span></h2>
-        <form action="">
-            <input type="text" name="amount" value="1" placeholder="Enter amount ">
-            <div class="dropdown">
-                <div class="from">
-                    <p>From</p>
-                    <div class="selection">
-                        <img src="https://flagsapi.com/US/flat/64.png" alt="flag">
-                        <select name="from" style="background-color: transparent;">
-                            
-                        </select>
-                    </div>
+    <div class="container">
+        <!-- Currency Converter -->
+        <section id="converter" class="converter">
+            <h2>Currency Pro</h2>
+            <div class="converter-box">
+                <div class="input-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount" value="1">
                 </div>
-                <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                <div class="to">
-                    <p>To</p>
-                    <div class="selection">
-                        <img src="https://flagsapi.com/IN/flat/64.png" alt="flag">
-                        <select name="to" class="select-from" style="background-color: transparent;">
-                            
-                        </select>
-                    </div>
+                <div class="input-group">
+                    <label for="from-currency">From</label>
+                    <select id="from-currency">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="INR">INR</option> <!-- Added INR for Indian Rupee -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="to-currency">To</label>
+                    <select id="to-currency">
+                        <option value="INR">INR</option> <!-- Default to INR -->
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                    </select>
                 </div>
             </div>
-            <button class="btn">Exchange</button>
-            <p class="msg">1 USD = 83.55 INR</p>
-        </form>
+            <button class="exchange-btn" onclick="convertCurrency()">Convert</button>
+
+            <!-- Display converted amount -->
+            <div id="converted-amount" class="converted-amount">
+                <p>Converted Amount: <span id="result">1 INR</span></p>
+            </div>
+        </section>
+
+        <!-- What is Currency Pro -->
+        <section id="about" class="info-section">
+            <h2>What is Currency Pro?</h2>
+            <p>Currency Pro is a financial tool that helps you convert one currency into another based on current exchange rates. It's essential for international trade, travel planning, and understanding global markets. Our converter provides real-time conversions for major world currencies, helping you make informed financial decisions.</p>
+        </section>
+
+        <!-- How to Use -->
+        <section id="how-to" class="info-section">
+            <h2>How to Use</h2>
+            <div class="steps">
+                <div class="step-card">
+                    <h3>Step 1</h3>
+                    <p>Enter the amount you want to convert in the amount field.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Step 2</h3>
+                    <p>Select the currency you want to convert from in the "From" dropdown.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Step 3</h3>
+                    <p>Select the currency you want to convert to in the "To" dropdown.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Step 4</h3>
+                    <p>Click the "Convert" button to see the converted amount.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator -->
+        <section id="calculator" class="calculator">
+            <h2>Simple Calculator</h2>
+            <input type="text" class="calc-display" readonly>
+            <div class="calc-buttons">
+                <button class="calc-btn">7</button>
+                <button class="calc-btn">8</button>
+                <button class="calc-btn">9</button>
+                <button class="calc-btn">/</button>
+                <button class="calc-btn">4</button>
+                <button class="calc-btn">5</button>
+                <button class="calc-btn">6</button>
+                <button class="calc-btn">*</button>
+                <button class="calc-btn">1</button>
+                <button class="calc-btn">2</button>
+                <button class="calc-btn">3</button>
+                <button class="calc-btn">-</button>
+                <button class="calc-btn">0</button>
+                <button class="calc-btn">.</button>
+                <button class="calc-btn">=</button>
+                <button class="calc-btn">+</button>
+            </div>
+        </section>
     </div>
 
-    <div class="container-about" id ="container-about">
-        <h1>About Us</h1>
-        <p>A currency converter is indispensable for navigating foreign exchange, whether for travel, online shopping, or forex trading. Utilizing real-time exchange rates, this tool facilitates accurate conversions between different currencies, empowering users to make informed financial decisions. Available as online platforms and mobile apps, currency converters ensure accessibility and convenience globally, supporting a wide array of currencies. Many also offer features like historical exchange rate data for trend analysis and predictive insights. Advanced versions integrate with financial platforms, streamlining transactions and portfolio management. In essence, currency converters serve as crucial aids in international finance, offering clarity and precision amid the complexities of the global market.</p>
-
-            <h1>How to Exchange Currency?</h1>
-        <p>Exchanging currency online is a straightforward process ensuring smooth and secure transactions. Start by choosing a reputable currency exchange platform with competitive rates and reliable service. After registering and verifying your account, typically with identification documents, select the currencies for exchange. Verify the current exchange rate to ensure it meets your needs. Once confirmed, finalize the transaction details and proceed with the exchange. Funds are usually deposited directly into your designated bank account or digital wallet, making online currency exchange a convenient method for managing international transactions efficiently.</p>
-    </div>
-
-    <section class="contact-section" id="contact-section">
-        <div class="contact-content">
-            <h2>Contact Us</h2>
-            <form action="#">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 CurrencyConverter. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
+        <p>&copy; 2024 Currency Pro. All rights reserved.</p>
+        <p>Designed with ❤️ for easy currency conversion</p>
     </footer>
 
-    <script src="Codes.js"></script>
-    <script src="currency.js"></script>
-</body>
+    <script>
+        // Default conversion rates (1 USD to INR as an example)
+        const conversionRates = {
+            USD: { INR: 83.15, EUR: 0.92, GBP: 0.75, JPY: 141.95 },
+            EUR: { USD: 1.09, INR: 91.57, GBP: 0.82, JPY: 154.35 },
+            GBP: { USD: 1.33, EUR: 1.22, INR: 111.36, JPY: 188.55 },
+            JPY: { USD: 0.007, EUR: 0.0065, GBP: 0.0053, INR: 0.59 },
+            INR: { USD: 0.012, EUR: 0.011, GBP: 0.009, JPY: 1.69 },
+        };
+
+        // Convert currency and display result
+        function convertCurrency() {
+            const amount = document.getElementById('amount').value;
+            const fromCurrency = document.getElementById('from-currency').value;
+            const toCurrency = document.getElementById('to-currency').value;
+
+            // Get conversion rate
+            const rate = conversionRates[fromCurrency][toCurrency];
+
+            // Calculate converted amount
+            const convertedAmount = (amount * rate).toFixed(2);
+
+            // Display the converted amount
+            document.getElementById('result').innerText = `${convertedAmount} ${toCurrency}`;
+        }
+
+        // Set default conversion when the page loads
+        window.onload = function() {
+            convertCurrency(); // Convert immediately to show 1 USD to INR
+        };
+    </script>
+</body> 
 </html>
