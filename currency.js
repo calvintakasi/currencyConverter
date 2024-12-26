@@ -61,4 +61,4 @@ const navMenu = document.querySelector('.navbar-menu');
 mobileMenu.addEventListener('click', function() {
     mobileMenu.classList.toggle('is-active');
     navMenu.classList.toggle('active');
-});
+}); 
