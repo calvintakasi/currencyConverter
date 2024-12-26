@@ -1,14 +1,10 @@
 const BASE_URL = "https://v6.exchangerate-api.com/v6/";
 const API_KEY = "3075bb9e294e1e1d3f7b9ccd";
 
-// Function to fetch the conversion rates and calculate the converted amount
 async function convertCurrency() {
-    // Get the amount and selected currencies
     const amount = document.getElementById('amount').value;
     const fromCurrency = document.getElementById('from-currency').value;
     const toCurrency = document.getElementById('to-currency').value;
-    
-    // API URL to get the exchange rates for the "fromCurrency"
     const apiUrl = `${BASE_URL}${API_KEY}/latest/${fromCurrency}`;
     
     try {
@@ -41,52 +37,40 @@ window.onload = () => {
 }
 
 
-
-
 //for calculator
-
-   
     const calcDisplay = document.getElementById('calc-display');
     const calcButtons = document.querySelectorAll('.calc-btn');
     let currentInput = ''; 
-
 
     function updateDisplay() {
         calcDisplay.value = currentInput;
     }
 
-    
     function handleButtonClick(value) {
         if (value === '=') {
             try {
-                // If the value is '=', evaluate the current expression
                 currentInput = eval(currentInput).toString();
             } catch (e) {
-                currentInput = 'Error';  // Show 'Error' if there was an invalid input
+                currentInput = 'Error'; 
             }
         } else if (value === 'C') {
-            currentInput = '';  // Clear the input if 'C' is pressed
+            currentInput = '';  
         } else {
-            currentInput += value;  // Add the clicked value to currentInput
+            currentInput += value;  
         }
         updateDisplay();  // Update the display
     }
 
-    // Add event listeners to all calculator buttons
     calcButtons.forEach(button => {
         button.addEventListener('click', () => {
             handleButtonClick(button.textContent);
         });
     });
 
-
-    // Get the elements by their IDs
     const menuIcon = document.getElementById('menu-icon');
     const navLinks = document.getElementById('nav-links');
 
-    // Toggle the visibility of the navigation menu when the menu icon is clicked
     menuIcon.addEventListener('click', () => {
-        // Toggle the 'active' class on the nav-links
         navLinks.classList.toggle('active');
     });
 

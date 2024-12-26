@@ -1,4 +1,6 @@
 /* Reset and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -80,8 +82,14 @@ body {
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Horizontally centers the elements */
+  align-items: center; 
   justify-content: center;
+}
+
+.converter h2{
+  font-size: 4rem;
+  font-family: "Lilita One", serif;
+  font-weight: 400;
 }
 
 .converter-box {
@@ -101,10 +109,10 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-top: 0.5rem;
-  font-size: 1rem; /* Ensure the font size is readable */
+  font-size: 1rem; 
 }
 
-/* Dropdown styles (ensuring visibility) */
+/* Dropdown styles */
 input[type="number"],
 select {
   font-size: 1rem;
@@ -127,7 +135,7 @@ select:focus {
 
 /* Add a custom dropdown arrow */
 select::-ms-expand {
-  display: none; /* Hide default arrow in IE */
+  display: none; 
 }
 
 select::after {
@@ -148,8 +156,8 @@ select::after {
   cursor: pointer;
   margin: 1rem 0;
   transition: background-color 0.3s;
-  width: 100%; /* Make button take full width on small screens */
-  max-width: 300px; /* Button has a max width on larger screens */
+  width: 100%; 
+  max-width: 300px; 
 }
 
 .exchange-btn:hover {
@@ -239,7 +247,7 @@ select::after {
 /* Responsive design */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide the nav links by default on small screens */
+    display: none; 
     position: absolute;
     top: 60px;
     left: 0;
@@ -255,7 +263,7 @@ select::after {
 }
 
 .nav-links.active {
-    display: flex; /* Show the nav links when the active class is added */
+    display: flex; 
 }
 
   .converter-box {
