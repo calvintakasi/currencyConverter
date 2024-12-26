@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -100,6 +101,42 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-top: 0.5rem;
+  font-size: 1rem; /* Ensure the font size is readable */
+}
+
+/* Dropdown styles (ensuring visibility) */
+input[type="number"],
+select {
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 2.5rem;
+  position: relative;
+}
+
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Add a custom dropdown arrow */
+select::-ms-expand {
+  display: none; /* Hide default arrow in IE */
+}
+
+select::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .exchange-btn {
@@ -186,6 +223,10 @@ body {
   background-color: #e0e0e0;
 }
 
+.calc-buttons  #equal , #clear{
+  background-color: #646cff;
+}
+
 /* Footer */
 .footer {
   background-color: #213547;
@@ -198,26 +239,45 @@ body {
 /* Responsive design */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  .menu-icon.active + .nav-links {
-    display: flex;
-    flex-direction: column;
+    display: none; /* Hide the nav links by default on small screens */
     position: absolute;
-    top: 100%;
+    top: 60px;
     left: 0;
     right: 0;
     background-color: white;
+    flex-direction: column;
     padding: 1rem;
     box-shadow: var(--shadow);
-  }
+}
+
+.menu-icon {
+    display: block;
+}
+
+.nav-links.active {
+    display: flex; /* Show the nav links when the active class is added */
+}
 
   .converter-box {
     flex-direction: column;
+  }
+
+  .input-group input,
+  .input-group select {
+    font-size: 1rem;
+  }
+
+  .exchange-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator {
+    width: 100%;
+  }
+  .calc-display {
+    font-size: 1rem;
   }
 }

@@ -11,20 +11,22 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">Currency Pro</div>
-            <div class="menu-icon">
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#converter">Converter</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#how-to">How to Use</a></li>
-                <li><a href="#calculator">Calculator</a></li>
-            </ul>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-content">
+        <div class="logo">Currency Pro</div>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-ellipsis-v"></i>
         </div>
-    </nav>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#converter">Converter</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#how-to">How to Use</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+        </ul>
+    </div>
+</nav>
+
 
     <div class="container">
         <!-- Currency Converter -->
@@ -38,21 +40,119 @@
                 <div class="input-group">
                     <label for="from-currency">From</label>
                     <select id="from-currency">
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="GBP">GBP</option>
-                        <option value="JPY">JPY</option>
-                        <option value="INR">INR</option> <!-- Added INR for Indian Rupee -->
+                        <option value="USD">United States Dollar (USD)</option>
+                        <option value="AED">United Arab Emirates Dirham (AED)</option>
+                        <option value="AFN">Afghan Afghani (AFN)</option>
+                        <option value="ARS">Argentine Peso (ARS)</option>
+                        <option value="AUD">Australian Dollar (AUD)</option>
+                        <option value="BDT">Bangladeshi Taka (BDT)</option>
+                        <option value="BGN">Bulgarian Lev (BGN)</option>
+                        <option value="BHD">Bahraini Dinar (BHD)</option>
+                        <option value="BRL">Brazilian Real (BRL)</option>
+                        <option value="CAD">Canadian Dollar (CAD)</option>
+                        <option value="CHF">Swiss Franc (CHF)</option>
+                        <option value="CNY">Chinese Yuan (CNY)</option>
+                        <option value="COP">Colombian Peso (COP)</option>
+                        <option value="CRC">Costa Rican Colón (CRC)</option>
+                        <option value="CZK">Czech Koruna (CZK)</option>
+                        <option value="DKK">Danish Krone (DKK)</option>
+                        <option value="DZD">Algerian Dinar (DZD)</option>
+                        <option value="EGP">Egyptian Pound (EGP)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">British Pound (GBP)</option>
+                        <option value="GHS">Ghanaian Cedi (GHS)</option>
+                        <option value="HKD">Hong Kong Dollar (HKD)</option>
+                        <option value="HUF">Hungarian Forint (HUF)</option>
+                        <option value="IDR">Indonesian Rupiah (IDR)</option>
+                        <option value="ILS">Israeli New Shekel (ILS)</option>
+                        <option value="INR">Indian Rupee (INR)</option>
+                        <option value="JPY">Japanese Yen (JPY)</option>
+                        <option value="KES">Kenyan Shilling (KES)</option>
+                        <option value="KRW">South Korean Won (KRW)</option>
+                        <option value="KWD">Kuwaiti Dinar (KWD)</option>
+                        <option value="MXN">Mexican Peso (MXN)</option>
+                        <option value="MYR">Malaysian Ringgit (MYR)</option>
+                        <option value="NAD">Namibian Dollar (NAD)</option>
+                        <option value="NGN">Nigerian Naira (NGN)</option>
+                        <option value="NOK">Norwegian Krone (NOK)</option>
+                        <option value="NZD">New Zealand Dollar (NZD)</option>
+                        <option value="PAB">Panamanian Balboa (PAB)</option>
+                        <option value="PEN">Peruvian Nuevo Sol (PEN)</option>
+                        <option value="PHP">Philippine Peso (PHP)</option>
+                        <option value="PKR">Pakistani Rupee (PKR)</option>
+                        <option value="PLN">Polish Zloty (PLN)</option>
+                        <option value="QAR">Qatari Riyal (QAR)</option>
+                        <option value="RON">Romanian Leu (RON)</option>
+                        <option value="RUB">Russian Ruble (RUB)</option>
+                        <option value="SAR">Saudi Riyal (SAR)</option>
+                        <option value="SEK">Swedish Krona (SEK)</option>
+                        <option value="SGD">Singapore Dollar (SGD)</option>
+                        <option value="THB">Thai Baht (THB)</option>
+                        <option value="TRY">Turkish Lira (TRY)</option>
+                        <option value="TWD">Taiwan Dollar (TWD)</option>
+                        <option value="UAH">Ukrainian Hryvnia (UAH)</option>
+                        <option value="UYU">Uruguayan Peso (UYU)</option>
+                        <option value="VND">Vietnamese Dong (VND)</option>
+                        <option value="ZAR">South African Rand (ZAR)</option>
                     </select>
                 </div>
                 <div class="input-group">
                     <label for="to-currency">To</label>
                     <select id="to-currency">
-                        <option value="INR">INR</option> <!-- Default to INR -->
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="GBP">GBP</option>
-                        <option value="JPY">JPY</option>
+                        <option value="INR">Indian Rupee (INR)</option>
+                        <option value="AED">United Arab Emirates Dirham (AED)</option>
+                        <option value="AFN">Afghan Afghani (AFN)</option>
+                        <option value="ARS">Argentine Peso (ARS)</option>
+                        <option value="AUD">Australian Dollar (AUD)</option>
+                        <option value="BDT">Bangladeshi Taka (BDT)</option>
+                        <option value="BGN">Bulgarian Lev (BGN)</option>
+                        <option value="BHD">Bahraini Dinar (BHD)</option>
+                        <option value="BRL">Brazilian Real (BRL)</option>
+                        <option value="CAD">Canadian Dollar (CAD)</option>
+                        <option value="CHF">Swiss Franc (CHF)</option>
+                        <option value="CNY">Chinese Yuan (CNY)</option>
+                        <option value="COP">Colombian Peso (COP)</option>
+                        <option value="CRC">Costa Rican Colón (CRC)</option>
+                        <option value="CZK">Czech Koruna (CZK)</option>
+                        <option value="DKK">Danish Krone (DKK)</option>
+                        <option value="DZD">Algerian Dinar (DZD)</option>
+                        <option value="EGP">Egyptian Pound (EGP)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">British Pound (GBP)</option>
+                        <option value="GHS">Ghanaian Cedi (GHS)</option>
+                        <option value="HKD">Hong Kong Dollar (HKD)</option>
+                        <option value="HUF">Hungarian Forint (HUF)</option>
+                        <option value="IDR">Indonesian Rupiah (IDR)</option>
+                        <option value="ILS">Israeli New Shekel (ILS)</option>
+                        <option value="JPY">Japanese Yen (JPY)</option>
+                        <option value="KES">Kenyan Shilling (KES)</option>
+                        <option value="KRW">South Korean Won (KRW)</option>
+                        <option value="KWD">Kuwaiti Dinar (KWD)</option>
+                        <option value="MXN">Mexican Peso (MXN)</option>
+                        <option value="MYR">Malaysian Ringgit (MYR)</option>
+                        <option value="NAD">Namibian Dollar (NAD)</option>
+                        <option value="NGN">Nigerian Naira (NGN)</option>
+                        <option value="NOK">Norwegian Krone (NOK)</option>
+                        <option value="NZD">New Zealand Dollar (NZD)</option>
+                        <option value="PAB">Panamanian Balboa (PAB)</option>
+                        <option value="PEN">Peruvian Nuevo Sol (PEN)</option>
+                        <option value="PHP">Philippine Peso (PHP)</option>
+                        <option value="PKR">Pakistani Rupee (PKR)</option>
+                        <option value="PLN">Polish Zloty (PLN)</option>
+                        <option value="QAR">Qatari Riyal (QAR)</option>
+                        <option value="RON">Romanian Leu (RON)</option>
+                        <option value="RUB">Russian Ruble (RUB)</option>
+                        <option value="SAR">Saudi Riyal (SAR)</option>
+                        <option value="SEK">Swedish Krona (SEK)</option>
+                        <option value="SGD">Singapore Dollar (SGD)</option>
+                        <option value="THB">Thai Baht (THB)</option>
+                        <option value="TRY">Turkish Lira (TRY)</option>
+                        <option value="TWD">Taiwan Dollar (TWD)</option>
+                        <option value="UAH">Ukrainian Hryvnia (UAH)</option>
+                        <option value="USD">United States Dollar (USD)</option>
+                        <option value="UYU">Uruguayan Peso (UYU)</option>
+                        <option value="VND">Vietnamese Dong (VND)</option>
+                        <option value="ZAR">South African Rand (ZAR)</option>
                     </select>
                 </div>
             </div>
@@ -95,8 +195,8 @@
 
         <!-- Calculator -->
         <section id="calculator" class="calculator">
-            <h2>Simple Calculator</h2>
-            <input type="text" class="calc-display" readonly>
+            <h2>Calculator</h2>
+            <input type="text" class="calc-display" id="calc-display" readonly>
             <div class="calc-buttons">
                 <button class="calc-btn">7</button>
                 <button class="calc-btn">8</button>
@@ -112,10 +212,12 @@
                 <button class="calc-btn">-</button>
                 <button class="calc-btn">0</button>
                 <button class="calc-btn">.</button>
-                <button class="calc-btn">=</button>
+                <button class="calc-btn" id="equal">=</button>
                 <button class="calc-btn">+</button>
+                <button class="calc-btn" id="clear">C</button> <!-- Clear button -->
             </div>
         </section>
+        
     </div>
 
     <!-- Footer -->
@@ -124,36 +226,6 @@
         <p>Designed with ❤️ for easy currency conversion</p>
     </footer>
 
-    <script>
-        // Default conversion rates (1 USD to INR as an example)
-        const conversionRates = {
-            USD: { INR: 83.15, EUR: 0.92, GBP: 0.75, JPY: 141.95 },
-            EUR: { USD: 1.09, INR: 91.57, GBP: 0.82, JPY: 154.35 },
-            GBP: { USD: 1.33, EUR: 1.22, INR: 111.36, JPY: 188.55 },
-            JPY: { USD: 0.007, EUR: 0.0065, GBP: 0.0053, INR: 0.59 },
-            INR: { USD: 0.012, EUR: 0.011, GBP: 0.009, JPY: 1.69 },
-        };
-
-        // Convert currency and display result
-        function convertCurrency() {
-            const amount = document.getElementById('amount').value;
-            const fromCurrency = document.getElementById('from-currency').value;
-            const toCurrency = document.getElementById('to-currency').value;
-
-            // Get conversion rate
-            const rate = conversionRates[fromCurrency][toCurrency];
-
-            // Calculate converted amount
-            const convertedAmount = (amount * rate).toFixed(2);
-
-            // Display the converted amount
-            document.getElementById('result').innerText = `${convertedAmount} ${toCurrency}`;
-        }
-
-        // Set default conversion when the page loads
-        window.onload = function() {
-            convertCurrency(); // Convert immediately to show 1 USD to INR
-        };
-    </script>
+    <script src="currency.js"></script>
 </body> 
 </html>
