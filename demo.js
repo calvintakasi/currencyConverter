@@ -1,1 +1,1 @@
-console.log("cureency pro")
+console.log("currency pro")
