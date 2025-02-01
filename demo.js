@@ -1,1 +1,1 @@
-console.log("currency pro")
+console.log("currency pro webApp")
