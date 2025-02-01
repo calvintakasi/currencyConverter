@@ -295,6 +295,27 @@ select::after {
 }
 
 
+.exchange-rate {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.exchange-rate canvas {
+  width: 100%;
+  height: 400px;
+  margin-top: 2rem;
+}
+
+
+
+
+
+
+
 @keyframes slideInFromRight {
   0% {
     opacity: 0;
