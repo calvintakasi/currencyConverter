@@ -60,6 +60,29 @@ body {
   font-weight: 500;
 }
 
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  gap: 8px; 
+}
+
+.nav-button img {
+  height: 20px;
+}
+
+.nav-button:hover {
+  background-color: var(--secondary-color);
+}    
+
 .menu-icon {
   display: none;
   cursor: pointer;
