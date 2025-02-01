@@ -74,4 +74,6 @@ window.onload = () => {
         navLinks.classList.toggle('active');
     });
 
-    document.addEventListener('contextmenu', (event) => event.preventDefault());
+    // document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+    

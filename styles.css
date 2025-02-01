@@ -60,28 +60,7 @@ body {
   font-weight: 500;
 }
 
-.nav-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  gap: 8px; 
-}
 
-.nav-button img {
-  height: 20px;
-}
-
-.nav-button:hover {
-  background-color: var(--secondary-color);
-}    
 
 .menu-icon {
   display: none;
@@ -268,6 +247,7 @@ select::after {
 }
 
 /* Responsive design */
+
 @media (max-width: 768px) {
   .nav-links {
     display: none; 
@@ -280,6 +260,7 @@ select::after {
     padding: 1rem;
     box-shadow: var(--shadow);
 }
+
 
 .menu-icon {
     display: block;
@@ -311,4 +292,44 @@ select::after {
   .calc-display {
     font-size: 1rem;
   }
+}
+
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.converter h2 {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.exchange-btn {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.step-card {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.converter-box {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.info-section {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+nav {
+  animation: slideInFromRight 0.6s ease-out;
 }
