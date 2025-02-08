@@ -484,3 +484,10 @@ nav {
 .graph-section{
   animation: slideInFromRight 0.6s ease-out;
 }
+
+.calculator{
+  animation: slideInFromRight 0.6s ease-out;
+}
+footer{
+  animation: slideInFromRight 0.6s ease-out;
+}
