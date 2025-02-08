@@ -347,6 +347,10 @@ body {
   animation: slideInFromRight 0.6s ease-out;
 }
 
+#converted-amount p{
+  animation: slideInFromRight 0.6s ease-out;
+}
+
 .info-section {
   animation: slideInFromRight 0.6s ease-out;
 }
