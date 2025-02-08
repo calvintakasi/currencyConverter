@@ -185,6 +185,33 @@
             </div>
         </section>
 
+
+  <!-- Exchange Rate Graph -->
+    <section id="exchange-rate-graph" class="graph-section">
+        <h2>Exchange Rate Trends</h2>
+        <div class="graph-controls">
+            <select id="graph-currency-pair">
+                <option value="USD-EUR">USD/EUR</option>
+                <option value="EUR-USD">EUR/USD</option>
+                <option value="GBP-USD">GBP/USD</option>
+                <option value="USD-JPY">USD/JPY</option>
+            </select>
+            <select id="graph-timeframe">
+                <option value="1D">1 Day</option>
+                <option value="1W">1 Week</option>
+                <option value="1M">1 Month</option>
+                    <option value="3M">3 Months</option>
+             </select>
+        </div>
+        <div class="graph-container">
+            <canvas id="exchangeRateChart"></canvas>
+        </div>
+    </section>
+  
+
+
+
+
         <!-- What is Currency Pro -->
         <section id="about" class="info-section">
             <h2>What is Currency Pro?</h2>
@@ -213,14 +240,6 @@
                 </div>
             </div>
         </section>
-
-                <!-- Live Exchange Rate Graph -->
-        <section id="exchange-rate" class="exchange-rate">
-            <h2>Live Exchange Rates</h2>
-            <canvas id="exchangeRateGraph"></canvas>
-            <p>Exchange rates will be available soon. Stay tuned!</p>
-        </section>
-
 
         <!-- Calculator -->
         <section id="calculator" class="calculator">
@@ -257,6 +276,76 @@
 
     <script src="currency.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Toggle mobile menu
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+
+        // Initialize exchange rate chart
+        const ctx = document.getElementById('exchangeRateChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'],
+                datasets: [{
+                    label: 'Exchange Rate',
+                    data: [1.12, 1.13, 1.14, 1.13, 1.15, 1.14, 1.16, 1.15],
+                    borderColor: '#646cff',
+                    tension: 0.4,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Update chart when currency pair or timeframe changes
+        document.getElementById('graph-currency-pair').addEventListener('change', updateChart);
+        document.getElementById('graph-timeframe').addEventListener('change', updateChart);
+
+        function updateChart() {
+            const currencyPair = document.getElementById('graph-currency-pair').value;
+            const timeframe = document.getElementById('graph-timeframe').value;
+            
+            // Simulate new data based on selection
+            const newData = generateRandomData(8);
+            chart.data.datasets[0].data = newData;
+            chart.data.datasets[0].label = currencyPair;
+            chart.update();
+        }
+
+        function generateRandomData(count) {
+            const data = [];
+            let baseValue = 1.15;
+            for (let i = 0; i < count; i++) {
+                baseValue += (Math.random() - 0.5) * 0.02;
+                data.push(baseValue);
+            }
+            return data;
+        }
+    </script>
 
 </body> 
 </html>

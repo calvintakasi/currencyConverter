@@ -246,6 +246,35 @@ select::after {
   text-align: center;
 }
 
+.graph-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin: 2rem 0;
+}
+
+.graph-controls {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.graph-controls select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.graph-container {
+  height: 400px;
+  margin: 1rem 0;
+  position: relative;
+}
+
+
+
 /* Responsive design */
 
 @media (max-width: 768px) {
@@ -259,6 +288,14 @@ select::after {
     flex-direction: column;
     padding: 1rem;
     box-shadow: var(--shadow);
+}
+
+.graph-controls {
+  flex-direction: column;
+}
+
+.graph-container {
+  height: 300px;
 }
 
 
